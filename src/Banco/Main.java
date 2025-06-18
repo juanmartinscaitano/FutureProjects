@@ -12,7 +12,11 @@ public class Main {
         String clientName = "Nillo";
         String Birth = "16/07/1998";
         double balanceAccount1 = 2400.00;
-        //balance means the current account money
+
+        //put this variables in arrays so I can delete them
+        //put try and catch to handle the exceptions
+        //put a message of error if the value request if the value is higher than the balance
+
         Scanner scannerChoice = new Scanner(System.in);
 
         System.out.println("What you want to do?\n1: Withdrawn | 2: Transfer | 3: Current Balance | 4: Extract of two datas | 5: Cancel Your account");
