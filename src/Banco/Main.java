@@ -1,5 +1,6 @@
 package Banco;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -29,14 +30,12 @@ public class Main {
                 currentBalance(balanceAccount1);
                 break;
             case 4:
-                withdrawn(balanceAccount1);
+                TwoDayExtractsConsults(balanceAccount1);
                 break;
             case 5:
-                withdrawn(balanceAccount1);
+                AccountCancel(accountNumber ,agency ,clientName ,Birth ,balanceAccount1);
                 break;
         }
-
-
 
     }
 
@@ -79,20 +78,74 @@ public class Main {
 
     }
 
-    static void TwoDayExtractsConsults(){
+    static void TwoDayExtractsConsults(double balanceAccount1){
         Scanner scannerDays = new Scanner(System.in);
-        Random randomValue = new Random(50);
 
-        double balance = 2400.00;
-        double day1 = randomValue.nextInt();
-        double day2 = randomValue.nextInt();
+        System.out.println("Chose the first data - 1: Monday | 2: Tuesday | 3: Wendnesday | 4: Thursday 5: Friday | 6: Saturday | 7: Sunday");
+        int data1 = scannerDays.nextInt();
+
+        System.out.println("Chose the second data - 1: Monday | 2: Tuesday | 3: Wendnesday | 4: Thursday 5: Friday | 6: Saturday | 7: Sunday");
+        int data2 = scannerDays.nextInt();
+
+
+        int week = 7;
+
+        switch(week) {
+            case 1:
+                balanceAccount1 = balanceAccount1 - 100;
+                String monday = "Monday";
+                break;
+            case 2:
+                balanceAccount1 = balanceAccount1 - 200;
+                break;
+            case 3:
+                balanceAccount1 = balanceAccount1 - 300;
+                break;
+            case 4:
+                balanceAccount1 = balanceAccount1 - 400;
+                break;
+            case 5:
+                balanceAccount1 = balanceAccount1 - 500;
+                break;
+            case 6:
+                balanceAccount1 = balanceAccount1 - 600;
+                break;
+            case 7:
+                balanceAccount1 = balanceAccount1 - 700;
+                break;
+        }
+
+        System.out.println("Day 1: $" + data1 + ", and day two has: $" + data2 + ". The total of these two days is: $" + (data1 + data2));
 
         //continue this block of code with array
 
     }
 
-    static void AccountCancel(String[] args){
-        //write block of code here
+    static void AccountCancel(int accountNumber ,int agency ,String clientName ,String Birth ,double balanceAccount1){
+        Scanner scannerDelete = new Scanner(System.in);
+
+        System.out.println("Chose the reason to delete your account\n1: I don't use | 2: This Account is givin me trouble | 3: I'm choose another bank");
+        int deleteAccount = scannerDelete.nextInt();
+
+        int reasonsDeleteAccount = 3;
+
+        switch (reasonsDeleteAccount) {
+            case 1:
+                System.out.println("We are sorry to hear you don't use your account. It will be deleted in an instant");
+                accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                break;
+            case 2:
+                System.out.println("We are sorry to hear you are having trouble with our bank. Your account will be deleted in an instant");
+                accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                break;
+            case 3:
+                System.out.println("We are sorry to hear you are chosing another bank. Your account will be deleted in an instant");
+                accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                break;
+
+        }
+
+
     }
 
 }
