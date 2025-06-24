@@ -112,7 +112,7 @@ public class Main {
         Scanner scannerDays = new Scanner(System.in);
 
         try {
-            System.out.println("Chose the first data - 1: Monday | 2: Tuesday | 3: Wendnesday | 4: Thursday | 5: Friday | 6: Saturday | 7: Sunday");
+            System.out.println("Chose the first data - 1: Monday | 2: Tuesday | 3: Wednesday | 4: Thursday | 5: Friday | 6: Saturday | 7: Sunday");
             int data1 = scannerDays.nextInt();
 
             while (data1 < 1 || data1 > 7) {
@@ -120,7 +120,7 @@ public class Main {
                 data1 = scannerDays.nextInt();
             }
 
-            System.out.println("Chose the second data - 1: Monday | 2: Tuesday | 3: Wendnesday | 4: Thursday | 5: Friday | 6: Saturday | 7: Sunday");
+            System.out.println("Chose the second data - 1: Monday | 2: Tuesday | 3: Wednesday | 4: Thursday | 5: Friday | 6: Saturday | 7: Sunday");
             int data2 = scannerDays.nextInt();
 
             while (data2 < 1 || data2 > 7) {
@@ -244,9 +244,3 @@ public class Main {
 }
 
 
-/* To-do List
-* Atributos: conta, agência, nome do cliente, nascimento, saldo*
-
-  Métodos: |Sacar, *Transferir, Cancelar conta com justificativa, *Consultar o
-  * extrato entre duas datas, *consultar saldo atual.
- */
