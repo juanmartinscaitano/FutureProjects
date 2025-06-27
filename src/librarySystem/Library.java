@@ -1,4 +1,4 @@
-package LibrarySystem;
+package librarySystem;
 
 // desenvolver um sistema básico para gerenciar o empréstimo de livros em uma biblioteca.
 // Focando na listagem de livros disponiveis e na funcionalidade de empréstimo
