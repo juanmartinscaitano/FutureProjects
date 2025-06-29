@@ -15,7 +15,7 @@ public class Main {
 
             Scanner scannerChoice = new Scanner(System.in);
 
-            System.out.println("What you want to do?\n1: Withdrawn | 2: Transfer | 3: Current Balance | 4: Extract of two datas | 5: Cancel Your account");
+            System.out.println("What you want to do?\n1: Withdrawn | 2: Transfer | 3: Current Balance | 4: Extract of two dates | 5: Cancel Your account");
 
             int choice = scannerChoice.nextInt();
 
@@ -61,7 +61,7 @@ public class Main {
                 //withdrawn means take money from your bank account
 
             } else {
-                System.err.println("You don't have enought money to withdrawn.");
+                System.err.println("You don't have enough money to withdrawn.");
                 System.out.println("Current balance is: $" + balanceAccount1);
             }
 
@@ -85,10 +85,10 @@ public class Main {
             if (valueTransfer <= balanceAccount1){
                 balanceAccount1 = balanceAccount1 - valueTransfer;
                 balanceAccount2 = balanceAccount2 + valueTransfer;
-                System.out.println("You sucessful transfer $" + valueTransfer + " from account1 to account2. Now account1 have: $"
+                System.out.println("You successful transfer $" + valueTransfer + " from account1 to account2. Now account1 have: $"
                         + balanceAccount1 + "and account2 have: $" + balanceAccount2);
             } else {
-                System.err.println("You don't have enought money to proceed.");
+                System.err.println("You don't have enough money to proceed.");
                 System.out.println("Current balance: $" + balanceAccount1);
             }
 
@@ -100,9 +100,7 @@ public class Main {
     }
 
     static void currentBalance(double balanceAccount1){
-
         System.out.println("Current balance is: $" + balanceAccount1);
-
     }
 
     static void TwoDayExtractsConsults(double balanceAccount1){
@@ -132,7 +130,6 @@ public class Main {
                 case 1:
                     data1 = 100;
                     balanceAccount1 = balanceAccount1 - data1;
-                    String monday = "Monday";
                     break;
                 case 2:
                     data1 = 200;
@@ -164,7 +161,6 @@ public class Main {
                 case 1:
                     data2 = 10;
                     balanceAccount1 = balanceAccount1 - data2;
-                    String monday = "Monday";
                     break;
                 case 2:
                     data2 = 20;
@@ -192,48 +188,50 @@ public class Main {
                     break;
             }
 
-            System.out.printf("Day 1: $ %d, and day 2: $%d. These two datas added is: $%d", data1, data2, data1 + data2);
+            System.out.printf("Day 1: $ %d, and day 2: $%d. These two dates added is: $%d. Current balance is $4%.2f", data1, data2, data1 + data2, balanceAccount1);
         } catch (InputMismatchException TwoDayExtractsConsultsException) {
             System.err.println("Please type only numbers!");
         }
 
     }
 
-    static void AccountCancel(int accountNumber ,int agency ,String clientName ,String Birth ,double balanceAccount1){
+    static void AccountCancel(int accountNumber ,int agency ,String clientName ,String birth ,double balanceAccount1){
 
         try{
             Scanner scannerDelete = new Scanner(System.in);
 
 
 
-            System.out.println("Chose the reason to delete your account\n1: I don't use | 2: This Account is givin me trouble | 3: I'm choose another bank");
+            System.out.println("Chose the reason to delete your account\n1: I don't use | 2: This Account is given me trouble | 3: I'm choose another bank");
             int deleteAccount = scannerDelete.nextInt();
 
-            while(deleteAccount != 1 && deleteAccount != 2 && deleteAccount != 3){
+            while(deleteAccount < 1 || deleteAccount > 3){
                 System.err.println("Please type only 1, 2 or 3!");
                 deleteAccount = scannerDelete.nextInt();
             }
 
             int reasonsDeleteAccount = deleteAccount;
 
+
+            //Find a way to delete the information of bank user
             switch (reasonsDeleteAccount) {
                 case 1:
                     System.out.println("We are sorry to hear you don't use your account. It will be deleted in an instant");
-                    accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                    accountNumber = 0; agency = 0; clientName = null; birth = null; balanceAccount1 = 0;
                     break;
                 case 2:
                     System.out.println("We are sorry to hear you are having trouble with our bank. Your account will be deleted in an instant");
-                    accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                    accountNumber = 0; agency = 0; clientName = null; birth = null; balanceAccount1 = 0;
                     break;
                 case 3:
-                    System.out.println("We are sorry to hear you are chosing another bank. Your account will be deleted in an instant");
-                    accountNumber = 0; agency = 0; clientName = null; Birth = null; balanceAccount1 = 0;
+                    System.out.println("We are sorry to hear you are choosing another bank. Your account will be deleted in an instant");
+                    accountNumber = 0; agency = 0; clientName = null; birth = null; balanceAccount1 = 0;
                     break;
 
             }
 
         } catch (InputMismatchException AccountCancelException) {
-            System.err.println("Type only numbers");;
+            System.err.println("Type only numbers");
         }
 
     }
