@@ -1,7 +1,8 @@
 package librarySystem;
 
-// desenvolver um sistema básico para gerenciar o empréstimo de livros em uma biblioteca.
-// Focando na listagem de livros disponiveis e na funcionalidade de empréstimo
+// develop a basic system for manage the lend books in a library.
+// list of books available and the lean functionality
+
 import java.util.Scanner;
 
 public class Library {
