@@ -65,6 +65,8 @@ public class Library {
         for (int i = 0; i < books.length; i++){
             if (availableBooks[i]){
                 System.out.printf("•%-40s\n", books[i]);
+
+
             }
 
             int oneZero;
